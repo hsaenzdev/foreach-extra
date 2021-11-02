@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "lib": ["es5", "es6", "dom"],
+        "rootDir": "src",
+        "composite": true,
+        "esModuleInterop": true
+    },
+    "exclude": [ "./test" ],
+}
