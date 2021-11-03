@@ -1,9 +1,22 @@
 # Foreach-extra
-A javascript extended iteration tool written in typescript:
-* Sync/Async
+A javascript extended iteration tool written in typescript:  
 * Recursion
 * Delay
 * Skip
+* And more options to come soon
+
+Because this tool use a callback to iterate, it can be used in a sync/async way.
+``` javascript
+const arr = ['pizza', 'pasta', 'salad']
+
+foreachExtra(arr, (item, index, cb) => {
+    // Get next item after 1 second
+    setTimeout(() => {
+        // Call the callback to continue the iteration
+        cb()
+    }, 1000)
+})
+```
   
 # Installation
 ``` bash
@@ -23,10 +36,10 @@ import foreachExtra from 'foreach-extra'
 <script src="node_modules/foreach-extra/dist/foreach-extra.min.js"></script>
 ```
 
-# Getting Started
+# Examples
 Next examples will asume you have installed and imported foreach-extra.
 
-## Basic usage
+
 ``` javascript
 foreachExtra(['pizza', 'pasta', 'salad'], (item, index, cb) => {
     console.log(item, index)
@@ -60,11 +73,11 @@ foreachExtra(obj, (value, key, cb) => {
 // salad food3
 ```
 
-## Options
-* dalay         - Time in ms to get the next item
-* skip          - Skip items between iterations
-* recursive     - Depth iteration
-* skipRecursive - Skip items between recursive iterations
+# Options
+* dalay: Time in ms to get the next item
+* skip: Skip items between iterations
+* recursive: Depth iteration
+* skipRecursive: Skip items between recursive iterations
 
 ``` javascript
 // Default options are
@@ -88,15 +101,15 @@ foreachExtra(['pizza', 'pasta', 'salad'], options, (item, index, cb) => {
 // salad 2
 ```
 
-## Callback options
+# Callback options
 The callback function can receives the following options:
-* break  - Break the iteration
-* next   - Next item will be the next one (Default)
-* prev   - Next item will be the previous one
-* first  - Next item will be the first one
-* repeat - Next item will be the same one
-* last   - Next interation will be the last one
-* data   - Will return the entire array/object
+* break: Break the iteration
+* next: Next item will be the next one (Default)
+* prev: Next item will be the previous one
+* first: Next item will be the first one
+* repeat: Next item will be the same one
+* last: Next item will be the last one
+* data: Will return current array/object
 
 ``` javascript
 foreachExtra(['pizza', 'pasta', 'salad'], (item, index, cb) => {
@@ -141,9 +154,15 @@ foreachExtra(['pizza', 'pasta', 'salad'], (item, index, cb) => {
 // ['pizza', 'pasta', 'salad']
 ```
 
-## Advance usage
-This example will show how to use the options
+# Advanced example
+
 ``` javascript
+const options = {
+    skip: 1,
+    recursive: true,
+    skipRecursive: 2
+}
+
 const arr = [
     'pizza', 
     'pasta', 
@@ -176,12 +195,6 @@ const arr = [
     'steak',
     'salmon'
 ]
-
-const options = {
-    skip: 1,
-    recursive: true,
-    skipRecursive: 2
-}
 
 foreachExtra(arr, options, (item, index, cb) => {
     console.log(item, index)
@@ -216,6 +229,7 @@ foreachExtra(arr, options, (item, index, cb) => {
 // chips    9
 // steak    15
 ```
+For more examples take a look to the unit test
 
 # License  
 Copyright (c) 2021 Saenzo  
