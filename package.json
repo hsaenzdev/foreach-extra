@@ -1,6 +1,6 @@
 {
   "name": "foreach-extra",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Common stuff we do with foreach loops",
   "main": "./dist/foreach-extra.node.js",
   "types": "./src/foreach-extra.d.ts",
