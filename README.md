@@ -3,7 +3,7 @@ A javascript extended iteration tool written in typescript:
 * Sync/Async
 * Recursion
 * Delay
-* skip
+* Skip
   
 # Installation
 ``` bash
@@ -217,5 +217,6 @@ foreachExtra(arr, options, (item, index, cb) => {
 // steak    15
 ```
 
-# License
-## Licensed under the MIT license.
+# License  
+Copyright (c) 2021 Saenzo  
+MIT License
