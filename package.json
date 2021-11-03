@@ -4,11 +4,13 @@
   "description": "Common stuff we do with foreach loops",
   "main": "./dist/foreach-extra.node.js",
   "types": "./src/foreach-extra.d.ts",
+  "license": "MIT",
   "scripts": {
     "start": "nodemon src/app.ts",
     "build": "webpack",
     "build:w": "npx webpack -w",
-    "test": "jest --coverage"
+    "test": "jest",
+    "cover": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -24,16 +26,14 @@
     "recursive"
   ],
   "author": "Saenzo",
-  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/HectorSDevelopment/foreach-extra/issues"
   },
   "homepage": "https://github.com/HectorSDevelopment/foreach-extra#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.16.0",
-    "@babel/preset-typescript": "^7.16.0",
     "@types/jest": "^27.0.2",
     "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.4",
     "webpack": "^5.61.0",

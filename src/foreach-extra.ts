@@ -136,14 +136,16 @@ class ForeachExtra {
     }
 
     requestCommand(command:string):void|Object|Array<any> {
-        const goBack = ['prev', 'first', 'repeat', 'arr'].includes(command)
-
+        const goBack = [ 'prev', 'first', 'repeat', 'data' ].includes(command)
+        
         if (this.hasNext() === false && goBack === false) {
             this.callback && this.callback()
             return
         }
 
-        if (command === 'data') { return this.data }
+        if (command === 'data') { 
+            return this.data
+        }
 
         if (command === 'break') {
             this.current = this.len + 1
@@ -191,4 +193,4 @@ const foreachExtra:IForeachExtra = (arg1, arg2, arg3, arg4) => {
 /* istanbul ignore next */
 if (isBrowser || isJsDom) { window.foreachExtra = foreachExtra }
 
-export default foreachExtra
+export = foreachExtra

@@ -34,9 +34,10 @@ const serverConfig = {
 }
 
 const clientConfig = {
+    target: 'web',
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'foreach-extra.js'
+        filename: 'foreach-extra.min.js'
     },
     ...config
 }

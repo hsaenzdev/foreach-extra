@@ -27,4 +27,4 @@ interface IForeachExtra {
     (arg1: Array<any> | Object, arg2: IForeach | IOptions, arg3?: IForeach | Function, arg4?: Function): void;
 }
 declare const foreachExtra: IForeachExtra;
-export default foreachExtra;
+export = foreachExtra;
